@@ -94,4 +94,66 @@
 
 ---
 
+## 🧠 Analysis & Design
+
+### แนวคิดการออกแบบ
+
+- จัดเก็บข้อมูลอุปกรณ์พีซีรวมทั้งสถานะการใช้งานและผู้รับผิดชอบ
+- แยกส่วน Frontend และ Backend เพื่อให้สามารถพัฒนาและทดสอบได้ง่าย
+- ให้ระบบรองรับบทบาทของผู้ใช้งานหลายระดับ (Admin, IT, ผู้ใช้ทั่วไป)
+- สร้างรายงานสรุปสถานะอุปกรณ์ด้วยรูปแบบตารางและกราฟ
+
+### โครงสร้างหลักของระบบ
+
+- **Frontend:** หน้าเว็บแสดงผลสำหรับใช้งาน
+- **Backend:** API จัดการข้อมูลและรับคำขอ
+- **Database:** เก็บข้อมูลอุปกรณ์และการเรียกใช้งาน
+
+## 🏛️ ระบบ Architecture
+
+```mermaid
+flowchart LR
+  User[ผู้ใช้ทั่วไป / ผู้บริหาร / Admin] -->|เข้าถึงหน้าเว็บ| Frontend[Frontend]
+  Frontend -->|เรียก API| Backend[Backend]
+  Backend -->|อ่าน/เขียนข้อมูล| Database[Database]
+  Backend -->|สร้างรายงาน| Reporting[Reporting Module]
+```
+
+---
+
+## 🌐 GitHub Pages
+
+### สถานะปัจจุบัน
+
+- มี Git repository อยู่ใน `main` branch
+- มีโฟลเดอร์ `docs/` และไฟล์ `docs/index.html`
+- มีไฟล์ `docs/.nojekyll` เพื่อให้ Pages ไม่ข้ามไฟล์ที่ขึ้นต้นด้วยจุด
+
+### การตั้งค่า GitHub Pages
+
+1. ไปที่ GitHub repository > Settings > Pages
+2. เลือก Source เป็น `main` branch และ folder `docs`
+3. กด Save
+
+### URL ที่คาดว่าจะใช้งานได้
+
+- https://gotbangsue.github.io/my-project-documentation/
+
+> หมายเหตุ: หาก GitHub Pages ยังไม่ได้เปิด ใช้งานให้เข้าไปตั้งค่าตามขั้นตอนด้านบน
+
+---
+
+## ✅ เช็คลิสต์ความครบถ้วน
+
+| รายการ | สถานะ | หมายเหตุ |
+|---|---|---|
+| สร้าง GitHub Repository | ✅ | origin อยู่ที่ `https://github.com/GotBangsue/my-project-documentation.git` |
+| มี Commit History | ✅ | มี commit อย่างน้อย 2 ครั้ง |
+| README.md ระบุรายละเอียดโครงการ | ✅ | ครบทั้งทีม, วัตถุประสงค์, ขอบเขต, SDLC |
+| Analysis & Design | ✅ | เพิ่ม section ใน README และ docs page |
+| System Architecture | ✅ | เพิ่ม Mermaid diagram ใน README และ docs page |
+| GitHub Pages | ✅ | มี `docs/index.html` และ `docs/.nojekyll` |
+
+---
+
 **สร้างเมื่อ:** 2026-07-02

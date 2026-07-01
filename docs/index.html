@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimePC Documentation</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 24px; color: #1a1a1a; background: #f7f9fb; }
+    h1, h2, h3 { color: #0f3d73; }
+    section { margin-bottom: 28px; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 14px rgba(0,0,0,0.08); }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    table th, table td { border: 1px solid #c9c9c9; padding: 10px; text-align: left; }
+    table th { background: #eef3fb; }
+    .label { font-weight: 700; }
+    .link { color: #1a73e8; text-decoration: none; }
+    .note { background: #fef7d4; padding: 12px; border-left: 4px solid #f5c518; margin-top: 16px; }
+    .mermaid { background: #ffffff; border: 1px solid #d9e2ef; padding: 16px; border-radius: 8px; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'forest' });</script>
+</head>
+<body>
+  <section>
+    <h1>PrimePC - ระบบจัดการอีคอมเมิร์ซสำหรับรับจ้างหลังบ้าน</h1>
+    <p>เอกสารโครงการ PrimePC สำหรับนำเสนอใน GitHub Pages โดยใช้โฟลเดอร์ <code>docs/</code> เป็นแหล่งข้อมูลหน้าเว็บไซต์</p>
+    <p class="label">GitHub Repository:</p>
+    <p><a class="link" href="https://github.com/GotBangsue/my-project-documentation">https://github.com/GotBangsue/my-project-documentation</a></p>
+    <p class="label">GitHub Pages URL:</p>
+    <p><a class="link" href="https://gotbangsue.github.io/my-project-documentation/">https://gotbangsue.github.io/my-project-documentation/</a></p>
+  </section>
+  <section>
+    <h2>📋 ข้อมูลทีมงาน</h2>
+    <table>
+      <thead>
+        <tr><th>รหัสนักศึกษา</th><th>ชื่อ-สกุล</th><th>บทบาท</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.67140410</td><td>นาย ศรัณยู แซ่ตั้ง</td><td>Frontend & Backend</td></tr>
+        <tr><td>2.67124614</td><td>นาย วรพล เเสงพานิช</td><td>Frontend & Backend</td></tr>
+        <tr><td>3.67137113</td><td>นาย อภิชยุตม์ โรจน์สุกิจ</td><td>Frontend & Backend</td></tr>
+        <tr><td>4.67157971</td><td>นาย ธเนศวร ศรีทับทิม</td><td>Frontend & Backend</td></tr>
+        <tr><td>5.67177222</td><td>นาย ธีระวัฒน์ ซู่</td><td>Frontend & Backend</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2>💡 เหตุผลและแนวทาง</h2>
+    <p>PrimePC เป็นระบบจัดการอุปกรณ์คอมพิวเตอร์ที่ออกแบบมาเพื่อช่วยให้สถาบันการศึกษาและทีม IT สามารถจัดสรร ติดตาม และดูแลอุปกรณ์ได้อย่างเป็นระบบ ปรับปรุงการใช้ทรัพยากรให้คุ้มค่ายิ่งขึ้น</p>
+  </section>
+  <section>
+    <h2>🎯 วัตถุประสงค์ของโครงการ</h2>
+    <p>พัฒนาแพลตฟอร์มจัดการอุปกรณ์พีซี ที่รองรับการจัดเก็บข้อมูล รายงานสถานะ และการติดตามการใช้งาน โดยสอดคล้องกับหลัก SDLC</p>
+  </section>
+  <section>
+    <h2>📊 ขอบเขตของระบบ</h2>
+    <ul>
+      <li>Admin, IT Department, ผู้บริหารระดับสูง และผู้ใช้ทั่วไป</li>
+      <li>จัดการอุปกรณ์ CPU, GPU, RAM และสถานะการใช้งาน</li>
+      <li>รองรับการค้นหา ดูข้อมูล และขอใช้งานอุปกรณ์</li>
+    </ul>
+  </section>
+  <section>
+    <h2>📐 Analysis & Design</h2>
+    <p>ระบบนี้ออกแบบให้มีใช้ฟีเจอร์หลักต่อไปนี้:</p>
+    <ul>
+      <li>จัดเก็บข้อมูลอุปกรณ์และผู้ใช้งาน</li>
+      <li>โมดูลการจอง/จัดสรรอุปกรณ์</li>
+      <li>ระบบตรวจสอบสถานะอุปกรณ์และการซ่อมบำรุง</li>
+      <li>หน้าแสดงผลรายงานสรุปและแผนภูมิ</li>
+    </ul>
+    <p>การออกแบบเน้นโครงสร้างที่ชัดเจน ระหว่างส่วนแสดงผล (Frontend) และส่วนจัดการข้อมูล (Backend)</p>
+  </section>
+  <section>
+    <h2>🔧 System Architecture</h2>
+    <p>ระบบแบ่งเป็น 3 ส่วนหลัก:</p>
+    <ol>
+      <li>Frontend: หน้าเว็บใช้งานของผู้ใช้</li>
+      <li>Backend: บริการจัดการข้อมูลและ API</li>
+      <li>Database: การเก็บข้อมูลอุปกรณ์และสถานะ</li>
+    </ol>
+    <div class="mermaid">
+      graph LR
+        A[ผู้ใช้ทั่วไป] -->|ส่งคำขอ| B[Frontend]
+        C[Admin / IT] -->|จัดการอุปกรณ์| B
+        B -->|เรียก API| D[Backend]
+        D -->|อ่าน/เขียน| E[Database]
+        D -->|สร้างรายงาน| F[Reporting]
+    </div>
+  </section>
+  <section>
+    <h2>🔄 แนวทางการพัฒนา SDLC</h2>
+    <table>
+      <thead><tr><th>ขั้นตอน</th><th>รายละเอียด</th></tr></thead>
+      <tbody>
+        <tr><td>Planning</td><td>วิเคราะห์ความต้องการและจัดทำแผนโครงการ</td></tr>
+        <tr><td>Analysis</td><td>เก็บ Requirement และออกแบบ Use Case</td></tr>
+        <tr><td>Design</td><td>ออกแบบระบบและฐานข้อมูล</td></tr>
+        <tr><td>Development</td><td>พัฒนา Frontend และ Backend</td></tr>
+        <tr><td>Testing</td><td>ทดสอบระบบแบบ manual</td></tr>
+        <tr><td>Deployment</td><td>เผยแพร่ระบบบน GitHub Pages หรือเซิร์ฟเวอร์</td></tr>
+        <tr><td>Maintenance</td><td>ปรับปรุงและแก้ไขตาม Feedback</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2>🛠️ เทคโนโลยีที่ใช้</h2>
+    <table>
+      <thead><tr><th>เทคโนโลยี</th><th>รายการ</th></tr></thead>
+      <tbody>
+        <tr><td>Frontend</td><td>React</td></tr>
+        <tr><td>Backend</td><td>Node.js</td></tr>
+        <tr><td>Database</td><td>LocalStorage</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2>🌐 GitHub Pages</h2>
+    <p>เอกสารนี้พร้อมให้เผยแพร่ผ่าน GitHub Pages โดยใช้โฟลเดอร์ <code>docs/</code> บน branch <code>main</code>.</p>
+    <div class="note">
+      <p><strong>วิธีเปิดใช้งาน:</strong></p>
+      <ol>
+        <li>ไปที่ GitHub repository &gt; Settings &gt; Pages</li>
+        <li>เลือก Source เป็น <code>main</code> branch และ <code>/docs</code> folder</li>
+        <li>กด Save เพื่อให้ระบบสร้างเว็บไซต์</li>
+      </ol>
+    </div>
+    <p>URL ที่คาดว่าจะใช้งานได้:</p>
+    <p><a class="link" href="https://gotbangsue.github.io/my-project-documentation/">https://gotbangsue.github.io/my-project-documentation/</a></p>
+  </section>
+  <section>
+    <h2>📌 Git & Commit History</h2>
+    <p>Git repository มี commit history แล้ว สามารถใช้งานได้ตามข้อกำหนด</p>
+    <ul>
+      <li>Remote origin: <code>https://github.com/GotBangsue/my-project-documentation.git</code></li>
+      <li>มีอย่างน้อย 2 commits ใน branch <code>main</code></li>
+    </ul>
+    <p>หากต้องการส่งงาน ควรถ่ายภาพหน้าจอ SourceTree หรือ git log เพื่อประกอบการตรวจสอบ</p>
+  </section>
+</body>
+</html>
