@@ -138,6 +138,7 @@ flowchart LR
 ### URL ที่คาดว่าจะใช้งานได้
 
 - https://gotbangsue.github.io/my-project-documentation/
+https://drive.google.com/file/d/146mcU-iS6T0WXYD6WmyKiKhh3n_GpqVq/view?usp=drive_link
 
 > หมายเหตุ: หาก GitHub Pages ยังไม่ได้เปิด ใช้งานให้เข้าไปตั้งค่าตามขั้นตอนด้านบน
 
